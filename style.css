@@ -28,7 +28,9 @@ body{
     box-sizing: border-box;
     font-family: LS;
 }
-
+p.pxc{
+    color: var(--white-color);
+}
 /*-----HEADER START-----*/
 #header{
     position:fixed;
@@ -44,14 +46,14 @@ body{
     align-items: center;
     z-index: 5;
     background-color:var(--main-color);
-    font-family: LS
+    font-family: LS;
+    transition:transform 0.3s ease-in;
     
 }
 #header .logo{
     width:100px;
     height: 100%;
     margin-left: 2vw;
-    background-image: url("./logo.png");
     background-size: cover;
     
 } /*--LOGO--*/
