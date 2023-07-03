@@ -1,4 +1,13 @@
-window.addEventListener("load", (event) => {
+function scrollToZero(){
+  window.scrollTo({
+  	top: '0',
+  	behavior: "smooth"  	
+  })
+}
+
+
+
+window.addEventListener("load", () => {
   let links = document.querySelectorAll(".nav__link");
   let selfPic = document.querySelector(".self-pic");
   let bio = document.querySelector(".intro");
@@ -10,7 +19,9 @@ window.addEventListener("load", (event) => {
       link.style.top = `0%`;
     }, 300 * index);
   });
-  event.pageYOffset = 0
+
+  scrollToZero() //Scrolls to the top of the page after reload
+
   /*---Selfie and Bio animation ---*/
   selfPic.style.left = "0%"
   selfPic.style.position = "relative"
@@ -19,16 +30,31 @@ window.addEventListener("load", (event) => {
   setTimeout(()=>{bio.style.boxShadow = "10px 10px 0px 5px var(--white-color)"},800)
 });
 
-
+/*The thing below is header smooth hide animation*/
+let pixelCounter = document.querySelector("p.pxc");
+let header = document.querySelector("#header");
+let line = document.querySelector(".line")
+let listOfSkills = document.querySelectorAll("ul.skills li")
+let arrayOfSkills = [...listOfSkills]
 window.addEventListener("scroll", () => {
-	let pixelCounter = document.querySelector("p.pxc");
-	let header = document.querySelector("#header");
-	let scrolledPixels = window.pageYOffset || document.documentElement.scrollTop;
+	let scrolledPixels = window.pageYOffset
 	pixelCounter.innerText = `Scrolled: ${scrolledPixels}`;
-	if(scrolledPixels>685){
+	if(scrolledPixels>720){
 		header.style.transform = "translateY(-100%)"
-	}else{
+	}else if(scrolledPixels<720){
 		header.style.transform = 'translateY(0%)'
+	}
+	/*--LAZY LOAD--*/
+	if(scrolledPixels>=300 && scrolledPixels<=820){
+		let range = 0
+		arrayOfSkills.forEach((skill, index)=>{
+			setTimeout(()=>{
+				skill.style.transform = `translateX(${range}vw)`;
+				line.style.opacity = '1'
+				range+=3;
+			}, index * 350)
+		})
+
 	}
 });
 

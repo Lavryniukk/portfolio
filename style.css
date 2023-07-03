@@ -74,7 +74,7 @@ p.pxc{
     top: -70%;
     color: var(--white-color);
     margin-left: 2.5vw;
-    font-size: calc(1vw + 1vh);
+    font-size: calc(1.2vw + 1.2vh);
     padding: 5px;
     position: relative;
     z-index:2;
@@ -99,7 +99,7 @@ p.pxc{
 }
 .nav__link:hover::before{
     opacity:1;
-    transform: scaleX(120)
+    transform: scaleX(140)
 }
 /*-----HEADER END-----*/
 
@@ -113,6 +113,7 @@ p.pxc{
     display: -ms-flex;
     display: -o-flex;
     display: flex;
+    overflow: hidden;
 }
 
 /*INTRODUCTION START*/
@@ -156,7 +157,7 @@ p.pxc{
     font-weight: bold;  
 }
 .intro p{
-    font-size: calc((2vw + 2vh)/2)
+    font-size: calc((2.15vw + 2.15vh)/2)
 }
 /*INTRODUCTION END*/
 
@@ -164,8 +165,32 @@ p.pxc{
 section#knowledge{
     background-color: var(--white-color)
 }
-section#knowledge ul{
+ul.skills{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-evenly;
+    margin-left: 5vw;
 }
+
+.line{
+    height: 1000px;
+    width: 5px;
+    background-color: var(--main-color);
+    position: absolute;
+    transform: rotate(331.8deg);
+    left: 15.8%;
+    opacity: 0;
+
+
+}
+ul.skills li{
+    transform: translateX(-200%);
+    font-size: calc((3vw + 3vh)/2);
+    margin: 3vh 0vh;
+    transition: all 0.6s ease;
+}
+
 /*KNOWLEDGE END*/
 
 
@@ -181,5 +206,4 @@ section#knowledge ul{
     100%{
         box-shadow: 0px 0px 0px 0px var(--main-color)
     }
-
 }
