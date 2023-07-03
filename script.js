@@ -5,7 +5,10 @@ function scrollToZero(){
   })
 }
 
-
+let loadedIntro = false;
+let loadedSkills = false;
+let loadedProj = false;
+let loadedFoot = false;
 
 window.addEventListener("load", () => {
   let links = document.querySelectorAll(".nav__link");
@@ -33,7 +36,8 @@ window.addEventListener("load", () => {
 /*The thing below is header smooth hide animation*/
 let pixelCounter = document.querySelector("p.pxc");
 let header = document.querySelector("#header");
-let line = document.querySelector(".line")
+let ul = document.querySelector("ul.skills");
+let h1 = document.querySelector("#knowledge h1")
 let listOfSkills = document.querySelectorAll("ul.skills li")
 let arrayOfSkills = [...listOfSkills]
 window.addEventListener("scroll", () => {
@@ -45,15 +49,22 @@ window.addEventListener("scroll", () => {
 		header.style.transform = 'translateY(0%)'
 	}
 	/*--LAZY LOAD--*/
-	if(scrolledPixels>=300 && scrolledPixels<=820){
-		let range = 0
+
+	if(scrolledPixels>=300 && scrolledPixels<=820 && !loadedSkills){
+		loadedSkills = true
+		let height = 0
 		arrayOfSkills.forEach((skill, index)=>{
 			setTimeout(()=>{
-				skill.style.transform = `translateX(${range}vw)`;
-				line.style.opacity = '1'
-				range+=3;
+				skill.style.transform = `translateX(0vw)`;
+				h1.style.opacity = '1'
+				ul.style.height = `${height}px`
+				height+=100
 			}, index * 350)
+
+			ul.style.height = `${height - 100}px`
 		})
+		setTimeout(()=>{ul.style.boxShadow = "-10px 10px 0px 5px var(--main-color)"},0)
+
 
 	}
 });
