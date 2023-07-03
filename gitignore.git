@@ -1,0 +1,14 @@
+# Ignore compiled files
+*.class
+*.dll
+*.exe
+
+# Ignore log files
+*.log
+
+# Ignore a specific directory
+logs/
+
+# Ignore files with sensitive information
+secrets.txt
+config.ini
