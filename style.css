@@ -30,6 +30,7 @@ body{
 }
 p.pxc{
     color: var(--white-color);
+    display: none;
 }
 /*-----HEADER START-----*/
 #header{

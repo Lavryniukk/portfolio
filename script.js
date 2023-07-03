@@ -49,7 +49,7 @@ window.addEventListener("scroll", () => {
 		header.style.transform = 'translateY(0%)'
 	}
 	/*--LAZY LOAD--*/
-
+	/*KNOWLEDGE LAZY LOAD*/
 	if(scrolledPixels>=300 && scrolledPixels<=820 && !loadedSkills){
 		loadedSkills = true
 		let height = 0
@@ -64,8 +64,7 @@ window.addEventListener("scroll", () => {
 			ul.style.height = `${height - 100}px`
 		})
 		setTimeout(()=>{ul.style.boxShadow = "-10px 10px 0px 5px var(--main-color)"},0)
-
-
 	}
+	/*PROJECTS LAZY LOAD*/
 });
 
