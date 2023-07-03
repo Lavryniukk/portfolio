@@ -5,7 +5,13 @@
 
 # Ignore log files
 *.log
-
+# Ignore fonts
+*.ttf
+# Ignore images
+*.png
+*.svg
+*.jpg
+*.jpeg
 # Ignore a specific directory
 logs/
 
