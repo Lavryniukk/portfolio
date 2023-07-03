@@ -77,7 +77,6 @@ body{
     position: relative;
     z-index:2;
     overflow:hidden;
-    transition: color 0.2s ease-in;
     transition: top 0.5s ease;
 }
 .nav__link:hover{
@@ -113,12 +112,15 @@ body{
     display: -o-flex;
     display: flex;
 }
+
 /*INTRODUCTION START*/
 #intro{
     justify-content: space-around;
     align-items: center;
 }
 .self-pic{
+    position: absolute;
+    left: -100%;
     height: 550px;
     width: 400px;
     display: block;
@@ -126,25 +128,26 @@ body{
     overflow: hidden;
     background-image: url("me.jpg");
     background-size: cover;
-    transition: all 1s ease-in-out;
+    transition: border-radius 1s ease-in-out,
+                left 1s ease;
 }
 .self-pic:hover{
     border-radius: 5px;
-    animation: image-blink 0.8s ease 1s
+    animation: image-blink 0.8s ease 1s;
 } 
 .intro{
     width: 30vw;
     height: 30vh;
     padding: 15px;
-    box-shadow: 10px 10px 0px 5px var(--white-color);
     color:var(--white-color);
+    box-shadow: 0px 0px 0px 0px var(--white-color);
     border-radius: 1px;
-    transition: box-shadow 0.8s ease-in
+    position: absolute;
+    right: -80%;
+    transition: box-shadow 0.8s ease-in,
+                right 1s ease;
     
 }   
-.intro:hover{
-    box-shadow: -10px -10px 0px 5px var(--white-color);
-}
 .intro h1{
     margin-bottom: 5px;
     font-size: calc((4vw + 4vh)/2);
@@ -154,22 +157,17 @@ body{
     font-size: calc((2vw + 2vh)/2)
 }
 /*INTRODUCTION END*/
+
 /*KNOWLEDGE START*/
 section#knowledge{
     background-color: var(--white-color)
 }
 section#knowledge ul{
-    color:var(--main-color: ;
-    -moz-main-color: ;
-    -ms-main-color: ;
-    -o-main-color: ;
-    main-color: ;)
 }
 /*KNOWLEDGE END*/
 
 
 /*-----CONTENT END-----*/
-
 
 @keyframes image-blink{
     0%{
