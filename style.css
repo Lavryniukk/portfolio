@@ -1,0 +1,182 @@
+@font-face {
+    font-family:LS;
+    src:url("./LeagueSpartan.ttf");
+}
+:root {
+    --white-color:rgb(242,240,240);
+    --main-color:rgb(14,16,15);
+}
+body{
+    background-color: var(--main-color)
+}
+#wrapper{
+    width: 100%;
+    height: 100vh;    
+    background-color: var(--main-color);
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: LS;
+}
+
+/*-----HEADER START-----*/
+#header{
+    position:fixed;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    height: 80px;
+    width: 100vw;
+    justify-content:flex-start;
+    -ms-align-items: center;
+    align-items: center;
+    z-index: 5;
+    background-color:var(--main-color);
+    font-family: LS
+    
+}
+#header .logo{
+    width:100px;
+    height: 100%;
+    margin-left: 2vw;
+    background-image: url("./logo.png");
+    background-size: cover;
+    
+} /*--LOGO--*/
+.nav{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    -ms-align-items: inherit;
+    align-items: inherit;
+}
+.nav__link {
+    text-decoration: none;
+    color: var(--white-color);
+    margin-left: 2.5vw;
+    font-size: calc(1vw + 1vh);
+    padding: 5px;
+    position: relative;
+    z-index:2;
+    overflow:hidden;
+    transition: color 0.2s ease-in;
+}
+.nav__link:hover{
+    color:var(--white-color)
+}
+.nav__link::before {
+    content: ""; /* Add content here */
+    width: 1px;
+    height: 5%;
+    position: absolute;
+    background-color: var(--white-color);
+    top: 95%;
+    left: 50%;
+    opacity: 100%;
+    transition: all 0.3s ease-in;
+    opacity: 0;
+    border-radius: 20%;
+}
+.nav__link:hover::before{
+    opacity:1;
+    transform: scaleX(120)
+}
+/*-----HEADER END-----*/
+
+
+/*-----CONTENT START-----*/
+#content section{
+    height: 100vh;
+    width: 100vw;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+/*INTRODUCTION START*/
+#intro{
+    justify-content: space-around;
+    align-items: center;
+}
+.self-pic{
+    height: 550px;
+    width: 400px;
+    display: block;
+    border-radius: 84% 16% 35% 65% / 32% 21% 79% 68%;
+    overflow: hidden;
+    background-image: url("me.jpg");
+    background-size: cover;
+    transition: all 1s ease-in-out;
+}
+.self-pic:hover{
+    border-radius: 5px;
+    animation: image-blink 0.8s ease 1s
+} 
+.intro{
+    width: 30vw;
+    height: 30vh;
+    padding: 15px;
+    box-shadow: 10px 10px 0px 5px var(--white-color);
+    color:var(--white-color);
+    border-radius: 1px;
+    transition: box-shadow 0.8s ease-in
+    
+}   
+.intro:hover{
+    box-shadow: -10px -10px 0px 5px var(--white-color);
+}
+.intro h1{
+    margin-bottom: 5px;
+    font-size: calc((4vw + 4vh)/2);
+    font-weight: bold;  
+}
+.intro p{
+    font-size: calc((2vw + 2vh)/2)
+}
+/*INTRODUCTION END*/
+/*KNOWLEDGE START*/
+section#knowledge{
+    background-color: var(--white-color)
+}
+section#knowledge ul{
+    color:var(--main-color: ;
+    -moz-main-color: ;
+    -ms-main-color: ;
+    -o-main-color: ;
+    main-color: ;)
+}
+/*KNOWLEDGE END*/
+
+
+/*-----CONTENT END-----*/
+
+
+@keyframes image-blink{
+    0%{
+        box-shadow: 0px 0px 0px 0px var(--main-color)
+    }
+    50%{
+        box-shadow: 0px 0px 10px 5px var(--white-color)
+    }
+    100%{
+        box-shadow: 0px 0px 0px 0px var(--main-color)
+    }
+
+}
