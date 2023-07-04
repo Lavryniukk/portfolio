@@ -57,7 +57,6 @@ window.addEventListener("load", () => {
 });
 
 
-let pixelCounter = document.querySelector("p.pxc");
 let header = document.querySelector("#header");
 let ul = document.querySelector("ul.skills");
 let h1 = document.querySelector("#knowledge h1")
@@ -67,7 +66,6 @@ let arrayOfSkills = [...listOfSkills]
 /*The thing below is header smooth hide animation*/
 window.addEventListener("scroll", () => {
 	let scrolledPixels = window.pageYOffset
-	pixelCounter.innerText = `Scrolled: ${scrolledPixels}`;
 	if(scrolledPixels>720){
 		header.style.transform = "translateY(-100%)"
 	}else if(scrolledPixels<720){
