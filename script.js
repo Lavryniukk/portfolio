@@ -21,7 +21,7 @@ arrOfNavLinks.forEach(navLink=>{
 				scrollToPx(0)
 				break;
 			case 'know':
-				scrollToPx(800)
+				scrollToPx(760)
 				break;
 			case 'projects':
 				scrollToPx(2000)
@@ -56,13 +56,15 @@ window.addEventListener("load", () => {
   setTimeout(()=>{bio.style.boxShadow = "10px 10px 0px 5px var(--white-color)"},800)
 });
 
-/*The thing below is header smooth hide animation*/
+
 let pixelCounter = document.querySelector("p.pxc");
 let header = document.querySelector("#header");
 let ul = document.querySelector("ul.skills");
 let h1 = document.querySelector("#knowledge h1")
 let listOfSkills = document.querySelectorAll("ul.skills li")
+let h1Proj = document.querySelector("#projects h1")
 let arrayOfSkills = [...listOfSkills]
+/*The thing below is header smooth hide animation*/
 window.addEventListener("scroll", () => {
 	let scrolledPixels = window.pageYOffset
 	pixelCounter.innerText = `Scrolled: ${scrolledPixels}`;
@@ -87,6 +89,8 @@ window.addEventListener("scroll", () => {
 			ul.style.height = `${height - 100}px`
 		})
 		setTimeout(()=>{ul.style.boxShadow = "-10px 10px 0px 5px var(--main-color)"},0)
+	}else if(scrolledPixels>= 1000){
+		h1Proj.style.opacity = '1'
 	}
 	/*PROJECTS LAZY LOAD*/
 });

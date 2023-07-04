@@ -198,14 +198,28 @@ ul.skills li{
 /*PROJECTS START*/
 section#projects{
     color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 #projects h1{
     font-size: calc((10vh + 10vw)/2);
-    position: absolute;
-    left: 30%; 
+    position: relative;
     opacity: 1;
     margin-top: 5vh;
     transition: opacity 0.8s ease;
+    bottom: 25%;
+    opacity: 0;
+}
+#projects a{
+    margin-top: 10vh;
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: calc((5vh + 5vw)/2);
+}
+#projects a:hover{
+    text-decoration:underline;
 }
 /*PROJECTS END*/
 /*FOOTER START*/
@@ -216,7 +230,12 @@ section#projects{
     display: flex;
     border: 1px solid #000;
     border-top-left-radius: 100px;
+    align-items: center;
+    justify-content: space-around;
     border-top-right-radius: 100px;
+}
+#footer p{
+    font-size: calc((2vh + 2vw)/2);
 }
 /*FOOTER END*/
 /*-----CONTENT END-----*/
