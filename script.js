@@ -4,11 +4,8 @@ function scrollToPx(pixels){
   	behavior: "smooth"  	
   })
 }
-
-let loadedIntro = false;
 let loadedSkills = false;
 let loadedProj = false;
-let loadedFoot = false;
 
 /*---NAVIGATION LINKS ANCHORS---*/
 let navLinks = document.querySelectorAll(".nav__link");
@@ -87,7 +84,8 @@ window.addEventListener("scroll", () => {
 			ul.style.height = `${height - 100}px`
 		})
 		setTimeout(()=>{ul.style.boxShadow = "-10px 10px 0px 5px var(--main-color)"},0)
-	}else if(scrolledPixels>= 1000){
+	}else if(scrolledPixels>= 1000 && !loadedProj){
+		loadedProj = true
 		h1Proj.style.opacity = '1'
 	}
 	/*PROJECTS LAZY LOAD*/

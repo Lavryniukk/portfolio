@@ -51,6 +51,8 @@ body{
     width:80px;
     height: 100%;
     margin-left: 5vw;
+    background-image: url("./logo.png");
+    background-size: cover;
     
 } /*--LOGO--*/
 .nav{
@@ -59,6 +61,7 @@ body{
     display: -ms-flex;
     display: -o-flex;
     display: flex;
+
     height: 100%;
     -ms-align-items: inherit;
     align-items: inherit;
