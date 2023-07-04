@@ -1,6 +1,6 @@
-function scrollToZero(){
+function scrollToPx(pixels){
   window.scrollTo({
-  	top: '0',
+  	top: pixels,
   	behavior: "smooth"  	
   })
 }
@@ -9,6 +9,29 @@ let loadedIntro = false;
 let loadedSkills = false;
 let loadedProj = false;
 let loadedFoot = false;
+
+/*---NAVIGATION LINKS ANCHORS---*/
+let navLinks = document.querySelectorAll(".nav__link");
+let arrOfNavLinks = [...navLinks];
+arrOfNavLinks.forEach(navLink=>{
+	navLink.addEventListener("click", (event) => {
+		event.preventDefault()
+		switch (event.target.getAttribute('value')){
+			case 'intro':
+				scrollToPx(0)
+				break;
+			case 'know':
+				scrollToPx(800)
+				break;
+			case 'projects':
+				scrollToPx(2000)
+				break;
+			case 'contacts':
+				scrollToPx(2000)
+				break;
+	}
+})
+})
 
 window.addEventListener("load", () => {
   let links = document.querySelectorAll(".nav__link");
@@ -23,7 +46,7 @@ window.addEventListener("load", () => {
     }, 300 * index);
   });
 
-  scrollToZero() //Scrolls to the top of the page after reload
+  scrollToPx(0) //Scrolls to the top of the page after reload
 
   /*---Selfie and Bio animation ---*/
   selfPic.style.left = "0%"
