@@ -18,7 +18,7 @@ arrOfNavLinks.forEach(navLink=>{
 				scrollToPx(0)
 				break;
 			case 'know':
-				scrollToPx(760)
+				scrollToPx(820)
 				break;
 			case 'projects':
 				scrollToPx(2000)
@@ -50,7 +50,7 @@ window.addEventListener("load", () => {
   selfPic.style.position = "relative"
   bio.style.right = "0%"
   bio.style.position = "relative"
-  setTimeout(()=>{bio.style.boxShadow = "10px 10px 0px 5px var(--white-color)"},800)
+  setTimeout(()=>{bio.style.boxShadow = "6px 6px 0px 5px var(--white-color)"},800)
 });
 
 
@@ -77,17 +77,16 @@ window.addEventListener("scroll", () => {
 			setTimeout(()=>{
 				skill.style.transform = `translateX(0vw)`;
 				h1.style.opacity = '1'
-				ul.style.height = `${height}px`
-				height+=100
+				ul.style.height = `${height}vh`
+				height+=12
 			}, index * 350)
 
 			ul.style.height = `${height - 100}px`
 		})
-		setTimeout(()=>{ul.style.boxShadow = "-10px 10px 0px 5px var(--main-color)"},0)
+		ul.style.boxShadow = "-10px 10px 0px 1px var(--main-color)"
 	}else if(scrolledPixels>= 1000 && !loadedProj){
 		loadedProj = true
 		h1Proj.style.opacity = '1'
 	}
-	/*PROJECTS LAZY LOAD*/
 });
 
