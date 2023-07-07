@@ -46,7 +46,7 @@ window.addEventListener("load", () => {
   scrollToPx(0) //Scrolls to the top of the page after reload
 
   /*---Selfie and Bio animation ---*/
-  selfPic.style.left = "0%"
+  selfPic.style.left = "4%"
   selfPic.style.position = "relative"
   bio.style.right = "0%"
   bio.style.position = "relative"

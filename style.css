@@ -47,14 +47,14 @@ body{
     transition:transform 0.3s ease-in;
     
 }
+/*--LOGO--*/
 #header .logo{
     width:80px;
     height: 100%;
     margin-left: 5vw;
     background-image: url("./logo.png");
     background-size: cover;
-    
-} /*--LOGO--*/
+}
 .nav{
     display: -webkit-flex;
     display: -moz-flex;
@@ -73,7 +73,7 @@ body{
     top: -70%;
     color: var(--white-color);
     margin-left: 2.5vw;
-    font-size: calc(1.2vw + 1.2vh);
+    font-size: 25px;
     padding: 5px;
     position: relative;
     z-index:2;
@@ -118,7 +118,7 @@ section#projects{
     height: 80vh;
 }
 /*INTRODUCTION START*/
-#intro{
+section#intro{
     justify-content: space-around;
     align-items: center;
 }
@@ -138,6 +138,7 @@ section#projects{
 }
 .self-pic:hover{
     border-radius: 5px;
+    left:%;
     animation: image-blink 0.8s ease 0.2s;
 } 
 .intro{
