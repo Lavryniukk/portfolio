@@ -211,8 +211,8 @@ section#knowledge h1{
     .nav__link{
         font-size: 19px;
     }
-    .header{
-        height: 55px;
+    #header{
+        height: 60px;
     }
     section#intro{
         height: 110vh;
