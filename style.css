@@ -195,16 +195,27 @@ section#knowledge h1{
     }
     .intro{
         box-shadow: -5px 5px 0px 1px var(--white-color);
+        width: 300px;
+        height: 200px;
+    }
+    .intro h1{
+        font-size: 30px;
+    }
+    .intro p{
         font-size: 18px;
-        width: 400px;
-        height: 260px;
     }
     .self-pic{
-        width: 400px;
+        width: 300px;
         height: 500;
     }
     .nav__link{
-        font-size: 20px;
+        font-size: 19px;
+    }
+    .header{
+        height: 55px;
+    }
+    section#intro{
+        height: 110vh;
     }
 }
 @media(max-width:1240px){
