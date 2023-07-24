@@ -62,7 +62,7 @@ window.addEventListener("load", () => {
   selfPic.style.position = "relative"
   bio.style.right = "0%"
   bio.style.position = "relative"
-  setTimeout(()=>{bio.style.boxShadow = "6px 6px 0px 5px var(--white-color)"},800)
+  setTimeout(()=>{bio.style.boxShadow = `6px 6px 0px ${pageXOffset < 666 ? '1' : '3'}px var(--white-color)`},800)
 });
 
 
@@ -95,7 +95,8 @@ window.addEventListener("scroll", () => {
 
 			ul.style.height = `${height - 100}px`
 		})
-		ul.style.boxShadow = "-10px 10px 0px 1px var(--main-color)"
+		
+		ul.style.boxShadow = `-10px 10px 0px 1px var(--main-color)`
 	}else if(scrolledPixels>= 1000 && !loadedProj){
 		loadedProj = true
 		h1Proj.style.opacity = '1'

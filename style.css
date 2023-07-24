@@ -7,7 +7,7 @@
     --main-color:rgb(14,16,15);
 }
 body{
-    background-color: var(--main-color)
+    background-color: var(--main-color);
 }
 #wrapper{
     width: 100%;
@@ -27,6 +27,7 @@ body{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     font-family: LS;
+
 }
 /*-----HEADER START-----*/
 #header{
@@ -55,6 +56,8 @@ body{
     background-image: url("./logo.png");
     background-size: cover;
 }
+
+
 .nav{
     display: -webkit-flex;
     display: -moz-flex;
@@ -143,10 +146,10 @@ section#intro{
     right: -100%;
     height: 250px;
     padding: 15px;
+    overflow: hidden;
     color:var(--white-color);
     box-shadow: 0px 0px 0px 0px var(--white-color);
     border-radius: 1px;
-
     transition: box-shadow 0.8s ease-in,
                 right 1s ease;
     
@@ -158,7 +161,7 @@ section#intro{
         align-items: space-around;
     }
     .intro{
-        left:25px;
+        left: 18px;
     }
 }
 .intro h1{
@@ -178,7 +181,31 @@ section#knowledge{
     align-items: center;
     justify-content: space-evenly;
     flex-direction: row;
-
+}
+section#knowledge h1{
+    font-size: 150px;
+    margin-left: 20px;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    text-align: justify;
+}
+@media(max-width:666px){
+    .logo{
+        display: none;
+    }
+    .intro{
+        box-shadow: -5px 5px 0px 1px var(--white-color);
+        font-size: 18px;
+        width: 400px;
+        height: 260px;
+    }
+    .self-pic{
+        width: 400px;
+        height: 500;
+    }
+    .nav__link{
+        font-size: 20px;
+    }
 }
 @media(max-width:1240px){
     section#knowledge{
@@ -190,13 +217,12 @@ section#knowledge{
         font-size: 100px;
     }
 }
-section#knowledge h1{
-    font-size: 150px;
-    margin-left: 20px;
-    opacity: 0;
-    transition: opacity 0.8s ease;
-    text-align: justify;
+@media (max-width: 775px){
+    section#knowledge h1{
+        font-size: 60px;
+    }
 }
+
 ul.skills{
     display: flex;
     position: relative;
