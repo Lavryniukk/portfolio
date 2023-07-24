@@ -1,9 +1,21 @@
-function scrollToPx(pixels){
-  window.scrollTo({
-  	top: pixels,
-  	behavior: "smooth"  	
-  })
-}
+function scrollToPx(value) {
+	let pixels;
+	
+	// Check if the value is provided as a percentage (e.g., '20%')
+	if (typeof value === 'string' && value.endsWith('%')) {
+	  // Parse the percentage value (remove the '%' sign) and calculate pixels based on the document height
+	  const percentage = parseFloat(value) / 100;
+	  pixels = percentage * (document.documentElement.scrollHeight - window.innerHeight);
+	} else {
+	  pixels = value;
+	}
+  
+	// Perform the scroll
+	window.scrollTo({
+	  top: pixels,
+	  behavior: 'smooth'
+	});
+}  
 let loadedSkills = false;
 let loadedProj = false;
 
@@ -18,13 +30,13 @@ arrOfNavLinks.forEach(navLink=>{
 				scrollToPx(0)
 				break;
 			case 'know':
-				scrollToPx(820)
+				scrollToPx('50%')
 				break;
 			case 'projects':
-				scrollToPx(2000)
+				scrollToPx('100%')
 				break;
 			case 'contacts':
-				scrollToPx(2000)
+				scrollToPx('100%')
 				break;
 	}
 })
@@ -72,13 +84,13 @@ window.addEventListener("scroll", () => {
 	/*KNOWLEDGE LAZY LOAD*/
 	if(scrolledPixels>=300 && scrolledPixels<=820 && !loadedSkills){
 		loadedSkills = true
-		let height = 0
+		let height = 100
 		arrayOfSkills.forEach((skill, index)=>{
 			setTimeout(()=>{
 				skill.style.transform = `translateX(0vw)`;
 				h1.style.opacity = '1'
-				ul.style.height = `${height}vh`
-				height+=12
+				ul.style.height = `${height}px`
+				height+=75
 			}, index * 350)
 
 			ul.style.height = `${height - 100}px`
